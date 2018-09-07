@@ -116,6 +116,11 @@ RUN pecl install xdebug \
     && echo "xdebug.remote_enable=on" >> $PHP_INI_DIR/conf.d/xdebug.ini \
     && echo "xdebug.remote_autostart=off" >> $PHP_INI_DIR/conf.d/xdebug.ini
 
+#
+# PHP install mongo
+#
+RUN pecl install mongodb \
+    && echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/php.ini
 
 #
 # PHP configuration
